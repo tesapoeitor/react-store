@@ -1,15 +1,15 @@
 import React from 'react'
 
-import "../styles/Login.css"
+import "../styles/ChangePassword.css"
 
-const Login = () => {
+const ChangePassword = () => {
     return (
         <div className="login">
             <div className="form-container">
             <img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
         
             <h1 className="title">Create a new password</h1>
-            <p className="subtitle">Enter a new passwrd for yue account</p>
+            <p className="subtitle">Enter a new password for you account</p>
         
             <form action="/" className="form">
                 <label htmlFor="password" className="label">Password</label>
@@ -25,4 +25,4 @@ const Login = () => {
     )
 }
 
-export { Login }
+export { ChangePassword }
