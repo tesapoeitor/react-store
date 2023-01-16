@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
 
 import cartImg from "@/icons/bt_add_to_cart.svg"
+import { Product } from '../types/Product'
 import "@/styles/ProductItem.css"
 
-const ProductItem = () => {
+interface Props {
+    product: Product
+}
+
+const ProductItem = ({ product }: Props) => {
     const [cart, setCart] = useState("")
 
     const handleClick = () => {
@@ -12,11 +17,11 @@ const ProductItem = () => {
 
     return (
         <div className="product-card">
-            <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+            <img src={product.images[1]} alt={product.title} />
             <div className="product-info">
                 <div>
-                    <p>$120,00</p>
-                    <p>Bike</p>
+                    <p>${product.price}</p>
+                    <p>{product.title}</p>
                 </div>
                 <figure onClick={handleClick}>
                     <img src={cartImg} alt="button add cart" />
