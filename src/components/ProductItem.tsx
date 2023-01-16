@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import cartImg from "@/icons/bt_add_to_cart.svg"
 import { Product } from '../types/Product'
+import { AppContext } from '../context/AppContext'
 import "@/styles/ProductItem.css"
 
 interface Props {
@@ -9,10 +10,10 @@ interface Props {
 }
 
 const ProductItem = ({ product }: Props) => {
-    const [cart, setCart] = useState("")
+    const { addToCart } = React.useContext(AppContext)!
 
-    const handleClick = () => {
-        setCart("agregado")
+    const handleClick = (item: Product) => {
+        addToCart(item)
     }
 
     return (
@@ -23,10 +24,9 @@ const ProductItem = ({ product }: Props) => {
                     <p>${product.price}</p>
                     <p>{product.title}</p>
                 </div>
-                <figure onClick={handleClick}>
+                <figure onClick={() => handleClick(product)}>
                     <img src={cartImg} alt="button add cart" />
                 </figure>
-                {cart}
             </div>
         </div>
     )
