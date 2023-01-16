@@ -3,6 +3,7 @@
     height: 100vh;
     display: grid;
     place-items: center;
+    align-content: center;
 }
 
 .form-container {
@@ -21,6 +22,7 @@
 .form {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .form a {
