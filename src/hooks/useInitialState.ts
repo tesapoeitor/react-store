@@ -3,7 +3,7 @@ import { useState } from "react"
 import { AppContextType } from "../types/AppContextType"
 import { Product } from "../types/Product";
 
-const initialState: {cart: Product[]} = {
+const initialState: AppContextType["state"] = {
 	cart: [],
 }
 
