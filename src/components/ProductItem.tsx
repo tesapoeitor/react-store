@@ -18,7 +18,7 @@ const ProductItem = ({ product }: Props) => {
 
     return (
         <div className="product-card">
-            <img src={product.images[1]} alt={product.title} />
+            <img src={product.images[0]} alt={product.title} />
             <div className="product-info">
                 <div>
                     <p>${product.price}</p>
